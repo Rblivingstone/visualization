@@ -50,12 +50,14 @@ i = 0
 line_dict = {}
 height_dict ={}
 x_start={}
+x_end = {}
 for state in df['LocationAbbr'].unique():
     line_dict[state] = i
     temp = df[df['LocationAbbr'] == state]
     amt = temp.iloc[4,10]
-    hist, edges = np.histogram((-trace)*amt,density=True)
+    hist, edges = np.histogram(np.random.choice((-trace)*amt,1000),density=True)
     x_start[state] = edges[0]
+    x_end[state] = edges[-1]
     height_dict[state] = np.max(hist)
     lines.append(p1.line(temp['Year'],temp['tax']))
     lines2.append(p2.line(temp['Year'],temp['Data_Value']))
@@ -74,12 +76,8 @@ for hist in hists:
 
 menu = [(obj,str(line_dict[obj])) for obj in line_dict]
 def callback(attr, old, new):
-    temp = df[df['LocationAbbr'] == new]
-    print(temp['Data_Value'])
-    x1,x2 = temp['Data_Value'].min(),temp['Data_Value'].max()
-    print(x1,x2)
     p3.x_range.start=x_start[new]
-    p3.x_range.end=x2
+    p3.x_range.end=x_end[new]
     p3.y_range.start=0
     p3.y_range.end=height_dict[new]
     lines[line_dict[old]].glyph.line_alpha=0
