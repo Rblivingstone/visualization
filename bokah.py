@@ -81,13 +81,13 @@ def callback(attr, old, new):
     p3.y_range.start=0
     p3.y_range.end=height_dict[new]
     lines[line_dict[old]].glyph.line_alpha=0
-    lines[line_dict[new]].glyph.line_alpha = 100
+    lines[line_dict[new]].glyph.line_alpha = 1
     lines2[line_dict[old]].glyph.line_alpha=0
-    lines2[line_dict[new]].glyph.line_alpha = 100
+    lines2[line_dict[new]].glyph.line_alpha = 1
     hists[line_dict[old]].glyph.line_alpha=0
-    hists[line_dict[new]].glyph.line_alpha=100
+    hists[line_dict[new]].glyph.line_alpha=1
     hists[line_dict[old]].glyph.fill_alpha=0
-    hists[line_dict[new]].glyph.fill_alpha=100
+    hists[line_dict[new]].glyph.fill_alpha=1
     
     
 dropdown = Select(title="State",value='CA',options=list(df['LocationAbbr'].unique()))
