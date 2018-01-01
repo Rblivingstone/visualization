@@ -1,2 +1,1 @@
-web: bokeh serve --port=$PORT --host=tobacco-tax-viz.herokuapp.com --host=* \
-     --address=0.0.0.0 --use-xheaders bokah.py
+web: bokeh serve --port=$PORT --address=0.0.0.0 --use-xheaders bokah.py
