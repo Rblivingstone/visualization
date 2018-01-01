@@ -2,4 +2,5 @@ pandas
 numpy
 matplotlib
 pymc3
+theano
 bokeh
