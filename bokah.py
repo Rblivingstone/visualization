@@ -54,7 +54,7 @@ for state in df['LocationAbbr'].unique():
     line_dict[state] = i
     temp = df[df['LocationAbbr'] == state]
     amt = temp.iloc[4,10]
-    hist, edges = np.histogram((1+trace['beta'])*amt,density=True)
+    hist, edges = np.histogram((-trace)*amt,density=True)
     x_start[state] = edges[0]
     height_dict[state] = np.max(hist)
     lines.append(p1.line(temp['Year'],temp['tax']))
