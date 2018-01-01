@@ -1,0 +1,6 @@
+pandas
+numpy
+matplotlib
+pymc3
+re
+bokeh
