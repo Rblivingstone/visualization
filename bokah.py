@@ -37,7 +37,7 @@ df = pd.merge(
                 on=['Year','LocationAbbr']
             )
 
-trace = pickle.load(open('Documents/tobacco/trace.pkl','rb'))
+trace = pickle.load(open('trace.pkl','rb'))
 #%%
 
 p1 = figure(x_range=[2005,2009], y_range=(0,1), title='Tax Rate Per Year')
