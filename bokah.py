@@ -17,8 +17,8 @@ import re
 import numpy as np
 
 
-temp1 = pd.read_csv('~/Documents/tobacco/Expenditures.csv')
-temp2 = pd.read_csv('~/Documents/tobacco/Taxes.csv')
+temp1 = pd.read_csv('Expenditures.csv')
+temp2 = pd.read_csv('Taxes.csv')
 
 temp3 = temp2[(temp2['ProvisionDesc'] == 'Cigarette Tax ($ per pack)')]
 tax = []
